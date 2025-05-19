@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStream Prime - Seu Universo de Filmes e Séries</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="BUARQUE (1).png" alt="Logo CineStream Prime">
+                CineStream Prime
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#produto">Produto</a></li>
+                    <li><a href="#estrategias">Estratégias</a></li>
+                    <li><a href="#analise-porter">Porter</a></li>
+                    <li><a href="#matriz-bcg">BCG</a></li>
+                    <li><a href="#matriz-ansoff">Ansoff</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>CineStream Prime</h1>
+            <p class="slogan">Seu Universo de Filmes e Séries, Sem Limites.</p>
+            <a href="#produto" class="button primary">Descubra o CineStream Prime</a>
+        </div>
+    </section>
+
+    <section id="produto" class="product">
+        <div class="container">
+            <h2>CineStream Prime: Mergulhe em Milhares de Histórias</h2>
+            <p>CineStream Prime é a sua plataforma de streaming definitiva, oferecendo uma vasta biblioteca de filmes de todos os gêneros, desde os clássicos atemporais até os mais recentes lançamentos. Explore emocionantes séries, documentários impactantes e conteúdo exclusivo, tudo em alta qualidade e sem anúncios.</p>
+            <h3>Nosso Público-Alvo:</h3>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <img src="image.png" alt="Entusiastas de filmes">
+                    <p>Entusiastas de filmes de todas as idades.</p>
+                </div>
+                <div class="audience-item">
+                    <img src="publico-entretenimento.jpg" alt="Pessoas em busca de entretenimento">
+                    <p>Pessoas em busca de entretenimento de qualidade sob demanda.</p>
+                </div>
+                <div class="audience-item">
+                    <img src="publico-familias.jpg" alt="Famílias">
+                    <p>Famílias procurando opções de lazer para todos os gostos.</p>
+                </div>
+                <div class="audience-item">
+                    <img src="publico-conveniencia.jpg" alt="Indivíduos que apreciam conveniência">
+                    <p>Indivíduos que apreciam a conveniência de assistir quando e onde quiserem.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audienceItems = document.querySelectorAll('.product .audience-item');
+        
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target); // Para de observar após a animação ocorrer uma vez
+                    }
+                });
+            }, {
+                threshold: 0.15 // Define quando a transição deve começar (10% do elemento visível)
+            });
+        
+            audienceItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+        </script>
+    </section>
+
+    <section id="estrategias" class="strategies">
+        <div class="container">
+            <h2>Estratégias de Venda e Diferenciais Competitivos</h2>
+            <div class="strategy-item">
+                <h3>Estratégias de Venda:</h3>
+                <ul>
+                    <li>**Modelo de Assinatura:** Planos mensais e anuais com acesso ilimitado a todo o catálogo.</li>
+                    <li>**Marketing Digital:** Campanhas online segmentadas para alcançar os diferentes perfis de público.</li>
+                    <li>**Parcerias com Produtoras:** Acordos para oferecer conteúdo exclusivo e lançamentos antecipados.</li>
+                    <li>**Promoções e Testes Gratuitos:** Períodos de teste para novos usuários experimentarem a plataforma.</li>
+                    <li>**Marketing de Influência:** Colaboração com influenciadores digitais para promover o CineStream Prime.</li>
+                </ul>
+            </div>
+            <div class="strategy-item">
+                <h3>Diferenciais Competitivos:</h3>
+                <ul>
+                    <li>**Ampla Variedade de Conteúdo:** Milhares de filmes e séries de diversos gêneros e épocas.</li>
+                    <li>**Conteúdo Exclusivo:** Produções originais e parcerias que garantem conteúdo único.</li>
+                    <li>**Interface Intuitiva:** Navegação fácil e recursos de busca avançados para encontrar o que você procura.</li>
+                    <li>**Qualidade de Streaming:** Transmissão em alta definição (HD e 4K) com áudio imersivo.</li>
+                    <li>**Recomendações Personalizadas:** Algoritmos inteligentes que sugerem filmes e séries com base no seu histórico de visualização.</li>
+                    <li>**Visualização Offline:** Opção de baixar conteúdo para assistir sem internet.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="analise-porter" class="porter-analysis">
+        <div class="container">
+            <h2>Análise das 5 Forças de Porter</h2>
+            <div class="porter-grid">
+                <div class="porter-force">
+                    <h3>1. Rivalidade entre Concorrentes Existentes: Média a Alta</h3>
+                    <p>O mercado de educação online e plataformas de streaming de conteúdo é competitivo, com diversos players como Coursera, Udemy, edX e LinkedIn Learning. A diferenciação através da personalização e da qualidade do conteúdo é crucial para o StreamFlow Pro.</p>
+                </div>
+                <div class="porter-force">
+                    <h3>2. Ameaça de Novos Entrantes: Baixa a Média</h3>
+                    <p>A barreira de entrada envolve a criação de uma vasta biblioteca de conteúdo de qualidade e a construção de uma marca confiável. No entanto, plataformas menores e nichadas podem surgir, representando uma ameaça potencial.</p>
+                </div>
+                <div class="porter-force">
+                    <h3>3. Poder de Barganha dos Fornecedores: Baixo a Médio</h3>
+                    <p>Os fornecedores de conteúdo (instrutores, especialistas) podem ter algum poder de barganha, especialmente se forem altamente renomados. No entanto, uma plataforma com muitos usuários oferece um grande alcance, o que pode equilibrar esse poder.</p>
+                </div>
+                <div class="porter-force">
+                    <h3>4. Poder de Barganha dos Compradores: Médio a Alto</h3>
+                    <p>Os profissionais têm muitas opções de plataformas de aprendizado, o que lhes confere um poder de barganha considerável em termos de preço e qualidade do conteúdo. A proposta de valor do StreamFlow Pro precisa ser clara e atraente.</p>
+                </div>
+                <div class="porter-force">
+                    <h3>5. Ameaça de Produtos ou Serviços Substitutos: Média a Alta</h3>
+                    <p>Existem diversas alternativas ao aprendizado online por assinatura, como cursos presenciais, livros, tutoriais gratuitos no YouTube e outras formas de desenvolvimento profissional. O StreamFlow Pro precisa destacar sua conveniência, personalização e custo-benefício.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="matriz-bcg" class="bcg-matrix">
+        <div class="container">
+            <h2>Posição na Matriz BCG</h2>
+            <p>Considerando o mercado altamente competitivo e a necessidade de investir pesadamente em conteúdo para ganhar market share, o CineStream Prime, como um novo entrante, se posicionaria inicialmente como um **Ponto de Interrogação (Question Mark)** na Matriz BCG. O objetivo estratégico seria investir agressivamente em conteúdo exclusivo e marketing para tentar alcançar um alto market share em um mercado de alto crescimento, transformando-o em uma **Estrela**.</p>
+            <div class="bcg-diagram">
+                <p><strong>Alto Crescimento | Baixo Market Share: Ponto de Interrogação (CineStream Prime)</strong></p>
+                <p>Alto Crescimento | Alto Market Share: Estrela</p>
+                <p>Baixo Crescimento | Baixo Market Share: Vaca Leiteira</p>
+                <p>Baixo Crescimento | Alto Market Share: Abacaxi</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="matriz-ansoff" class="ansoff-matrix">
+        <div class="container">
+            <h2>Estratégia de Crescimento pela Matriz Ansoff</h2>
+            <div class="ansoff-strategy">
+                <h3>Penetração de Mercado:</h3>
+                <p>Atrair mais usuários para a plataforma, oferecendo promoções especiais, melhorando a experiência do usuário e investindo em marketing para conquistar uma fatia maior do mercado existente de streaming.</p>
+            </div>
+            <div class="ansoff-strategy">
+                <h3>Desenvolvimento de Produto:</h3>
+                <p>Investir na produção de conteúdo original exclusivo, adicionar funcionalidades como interação social entre usuários e oferecer diferentes planos de assinatura com benefícios variados.</p>
+            </div>
+            <div class="ansoff-strategy">
+                <h3>Desenvolvimento de Mercado:</h3>
+                <p>Expandir para novos mercados geográficos, oferecendo legendas e dublagens em diversos idiomas, e adaptar o conteúdo para diferentes culturas.</p>
+            </div>
+            <div class="ansoff-strategy">
+                <h3>Diversificação:</h3>
+                <p>A longo prazo, considerar a oferta de produtos relacionados, como venda de produtos licenciados de filmes e séries ou a organização de eventos presenciais (ex: exibições especiais).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Assine agora e comece a sua jornada no mundo do entretenimento sem limites!</p>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="button primary">Assinar Agora</button>
+            </form>
+            <div class="contact-info">
+                <h3>Informações de Contato:</h3>
+                <p><strong>Endereço:</strong> Rua dos Filmes, 555, Bairro das Séries, Cidade da Tela</p>
+                <p><strong>Telefone:</strong> (11) 9876-5432</p>
+                <p><strong>Email:</strong> contato@cinestreamprime.com.br</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CineStream Prime. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
