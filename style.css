@@ -117,7 +117,7 @@ nav ul li a:hover {
 }
 
 .product p {
-    color: #c7c7c7;
+    color: #ffffff;
     line-height: 1.8;
     margin-bottom: 1em;
     text-align: center; /* Centralizar o texto introdutório */
@@ -175,7 +175,7 @@ nav ul li a:hover {
 }
 
 .strategies h2 {
-    font-size: 2.2em;
+    font-size: 2.7em;
     margin-bottom: 1.5em;
     color: #fffefe;
     text-align: center;
@@ -190,6 +190,7 @@ nav ul li a:hover {
     padding: 0 20px; /* Opcional: Adiciona um pouco de padding nas laterais do container */
     max-width: 1200px; /* Opcional: Define uma largura máxima para o container */
     margin: 0 auto; /* Opcional: Centraliza o container na tela */
+    font-size: 1.2em; /* Tamanho da fonte */
 }
 
 .strategies .strategy-item {
@@ -204,6 +205,9 @@ nav ul li a:hover {
     color: #e50914; /* Verde Neon */
     margin-top: 0;
     margin-bottom: 0.5em;
+    font-size: 1.5em; /* Aumentar o tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
 }
 
 .strategies .strategy-item ul {
@@ -267,7 +271,7 @@ nav ul li a:hover {
 }
 
 .porter-analysis .porter-force p {
-    color: #ccc;
+    color: #ffffff;
     line-height: 1.8;
 }
 
@@ -485,3 +489,8 @@ footer {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
     }
 }
+.audience-item img {
+    border-radius: 10px; /* ajuste o valor conforme o quanto quer arredondar */
+  }
+  
+  
