@@ -9,6 +9,13 @@ body {
 
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -133,49 +140,88 @@ nav ul li a:hover {
     font-weight: bold; /* Negrito */
 }
 
-.product .audience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cria um grid responsivo */
+.audience-flip-container {
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
     margin-top: 2em;
 }
 
-.product .audience-item {
+.audience-card {
+    width: 220px;
+    height: 280px;
+    perspective: 1000px;
+}
+
+.audience-card .card-front,
+.audience-card .card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
     background-color: #222;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease-in-out;
     text-align: center;
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(30px); /* Inicialmente um pouco abaixo */
-    /* A transição pode ser útil para outras mudanças de estado */
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    color: #fff;
 }
 
-/* Classe que ativa a animação */
-.product .audience-item.animate {
-    animation: fadeInUp 1s ease-out forwards; /* Usando a duração mais lenta */
+.card-front img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
-/* Definição da animação de subida */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.audience-card .card-back {
+    transform: rotateY(180deg);
+    background-color: #333;
 }
+
+.audience-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.audience-card:hover .card-back {
+    transform: rotateY(360deg);
+}
+
 /* Estilos da Seção Estratégias */
 .strategies {
-    background-color: #141414; /* Preto mais claro */
-    padding: 4em 0;
+    background-color: #000000; /* Preto mais claro */
+    padding: 0;
 }
 
 .strategies h2 {
-    font-size: 2.7em;
+    font-size: 2.10em;
+    margin-bottom: 1.5em;
+    color: #e50914;
+    text-align: center;
+    /* Estilos para que o título ocupe a largura total do grid */
+    grid-column: 1 / -1; /* Começa na primeira linha e termina na última */
+}
+
+.strategies p {
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    font-size: 1.em;
+    text-align: center; /* Centralizar o texto */
+}
+
+
+.strategies h3 {
+    font-size: 1.7em;
     margin-bottom: 1.5em;
     color: #fffefe;
     text-align: center;
@@ -183,114 +229,92 @@ nav ul li a:hover {
     grid-column: 1 / -1; /* Começa na primeira linha e termina na última */
 }
 
-.strategies .container {
-    display: grid; /* Ativa o CSS Grid para os filhos diretos */
-    grid-template-columns: 1fr 1fr; /* Cria duas colunas de largura igual */
-    gap: 20px; /* Espaçamento entre as colunas */
-    padding: 0 20px; /* Opcional: Adiciona um pouco de padding nas laterais do container */
-    max-width: 1200px; /* Opcional: Define uma largura máxima para o container */
-    margin: 0 auto; /* Opcional: Centraliza o container na tela */
-    font-size: 1.2em; /* Tamanho da fonte */
-}
-
-.strategies .strategy-item {
-    background-color: #222; /* Preto mais claro */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 0;
-}
-
-.strategies .strategy-item h3 {
-    color: #e50914; /* Verde Neon */
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    font-size: 1.5em; /* Aumentar o tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    text-align: center; /* Centraliza o texto */
-}
-
-.strategies .strategy-item ul {
-    list-style: disc;
-    padding-left: 20px;
-    color: #ffffff;
-    line-height: 1.8;
-}
-
-/* Opcional: Para telas menores, exibir os itens em uma única coluna */
-@media (max-width: 768px) {
-    .strategies .container {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
-    .strategies .strategy-item {
-        margin-bottom: 20px; /* Adiciona margem inferior para separar os itens na vertical */
-    }
-    .strategies h2 {
-        grid-column: 1; /* O título ocupa a largura total na coluna única */
-    }
-}
-
-
-/* Estilos da Seção Análise de Porter */
-.porter-analysis {
-    background-color: #141414; /* Preto mais claro */
-    padding: 4em 0;
-}
-
-.porter-analysis h2 {
-    font-size: 2.2em;
-    margin-bottom: 1.5em;
-    color: #fff;
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 1.5rem;
     text-align: center;
 }
 
-.porter-analysis .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.porter-analysis .porter-grid {
-    display: grid; /* Ativa o CSS Grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas responsivas com largura mínima de 300px */
-    gap: 20px; /* Espaçamento entre as células do grid */
-    margin-top: 20px; /* Espaçamento entre o título e o grid */
-}
-
-.porter-analysis .porter-force {
-    background-color: #222; /* Preto mais claro */
+.strategy-card {
+    background: #1e1e1e;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.porter-analysis .porter-force h3 {
-    color: #e50914; /* Verde Neon */
-    margin-top: 0;
-    margin-bottom: 0.5em;
+.strategy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-.porter-analysis .porter-force p {
-    color: #ffffff;
-    line-height: 1.8;
+.strategy-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
-/* Opcional: Ajustes para telas menores */
-@media (max-width: 768px) {
-    .porter-analysis .porter-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-    }
+
+
+/* Estilos da Seção Análise de Porter */
+
+.porter-analysis h2 {
+    margin-bottom: 10px;
+    font-size: 2.0rem;
+    text-align: center;
+    color: #e50914;
 }
 
-@media (min-width: 769px) and (max-width: 992px) {
-    .porter-analysis .porter-grid {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas médias */
-    }
+.porter-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
 }
+
+.porter-analysis p {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.porter-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    color: #fff;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.porter-card:hover {
+    transform: translateY(-5px);
+}
+
+.porter-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.force-nivel {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
 
 /* Estilos da Seção Matriz BCG */
 .bcg-matrix {
-    background-color: #141414; /* Preto mais claro */
+    background-color: #000000; /* Preto mais claro */
     padding: 4em 0;
     text-align: center;
 }
@@ -298,13 +322,14 @@ nav ul li a:hover {
 .bcg-matrix h2 {
     font-size: 2.2em;
     margin-bottom: 1em;
-    color: #fff;
+    color: #e50914;
 }
 
 .bcg-matrix p {
-    color: #ccc;
+    color: #ffffff;
     line-height: 1.8;
     margin-bottom: 1.5em;
+    font-size: 1.3em;
 }
 
 .bcg-matrix .bcg-diagram {
@@ -315,40 +340,59 @@ nav ul li a:hover {
 }
 
 /* Estilos da Seção Matriz Ansoff */
+/* Estilos da Seção Matriz Ansoff */
 .ansoff-matrix {
-    background-color: #141414; /* Preto mais claro */
+    background-color: #000;
     padding: 4em 0;
 }
 
 .ansoff-matrix h2 {
     font-size: 2.2em;
-    margin-bottom: 1.5em;
-    color: #fff;
+    margin-bottom: 2em;
+    color: #e50914;
     text-align: center;
 }
 
-.ansoff-matrix .ansoff-strategy {
-    background-color: #222; /* Preto mais claro */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
+/* Grid 2x2 */
+.ansoff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.ansoff-matrix .ansoff-strategy h3 {
-    color: #e50914; /* Verde Neon */
+/* Estilo dos quadrantes */
+.ansoff-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito de expansão no hover */
+.ansoff-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+}
+
+.ansoff-item h3 {
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: 0.5em;
+    font-size: 1.3em;
 }
 
-.ansoff-matrix .ansoff-strategy p {
-    color: #ccc;
+.ansoff-item p {
+    color: #ffffff;
     line-height: 1.8;
 }
 
+
 /* Estilos da Seção Contato */
 .contact {
-    background-color: #141414; /* Preto mais claro */
+    background-color: #000000; /* Preto mais claro */
     padding: 4em 0;
     text-align: center;
 }
@@ -493,4 +537,62 @@ footer {
     border-radius: 10px; /* ajuste o valor conforme o quanto quer arredondar */
   }
   
+  .diferenciais-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.diferenciais-carousel {
+    display: flex;
+    gap: 20px;
+    animation: scroll-carousel 25s linear infinite;
+}
+
+.diferencial-card {
+    flex: 0 0 250px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.diferencial-card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+}
+
+@keyframes scroll-carousel {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+.venda-timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 30px;
+    gap: 20px;
+    border-top: 2px dashed #444;
+    padding-top: 20px;
+  }
+  
+  .etapa {
+    text-align: center;
+    max-width: 220px;
+  }
+  
+  .etapa span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+  }
   

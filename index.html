@@ -39,103 +39,194 @@
     <section id="produto" class="product">
         <div class="container">
             <h2>CineStream Prime: Mergulhe em Milhares de Histórias</h2>
-            <p>CineStream Prime é a sua plataforma de streaming definitiva, oferecendo uma vasta biblioteca de filmes de todos os gêneros, desde os clássicos atemporais até os mais recentes lançamentos. Explore emocionantes séries, documentários impactantes e conteúdo exclusivo, tudo em alta qualidade e sem anúncios.</p>
+            <p>
+                CineStream Prime é a sua plataforma de streaming definitiva, oferecendo uma vasta biblioteca de filmes de todos os gêneros, desde os clássicos atemporais até os mais recentes lançamentos. Explore emocionantes séries, documentários impactantes e conteúdo exclusivo, tudo em alta qualidade e sem anúncios. A experiência é 100% digital, com navegação intuitiva, recomendações personalizadas e modo offline para ver onde quiser.
+            </p>
+    
             <h3>Nosso Público-Alvo:</h3>
-            <div class="audience-grid">
-                <div class="audience-item">
-                    <img src="New world.png" alt="Entusiastas de filmes">
-                    <p>Entusiastas de filmes de todas as idades.</p>
+            <div class="audience-flip-container">
+              <div class="audience-card">
+                <div class="card-front">
+                  <img src="New world.png" alt="Entusiastas de filmes">
+                  <p>Entusiastas de filmes</p>
                 </div>
-                <div class="audience-item">
-                    <img src="intern.png" alt="Pessoas em busca de entretenimento">
-                    <p>Pessoas em busca de entretenimento de qualidade sob demanda.</p>
+                <div class="card-back">
+                  <p>Cinéfilos de todas as idades, apaixonados por histórias cativantes.</p>
                 </div>
-                <div class="audience-item">
-                    <img src="kinko.png" alt="Famílias">
-                    <p>Famílias procurando opções de lazer para todos os gostos.</p>
+              </div>
+            
+              <div class="audience-card">
+                <div class="card-front">
+                  <img src="intern.png" alt="Entretenimento sob demanda">
+                  <p>Buscando entretenimento</p>
                 </div>
-                <div class="audience-item">
-                    <img src="rename.png" alt="Indivíduos que apreciam conveniência">
-                    <p>Indivíduos que apreciam a conveniência de assistir quando e onde quiserem.</p>
+                <div class="card-back">
+                  <p>Pessoas que querem acesso instantâneo a conteúdos variados, sem interrupções.</p>
+                </div>
+              </div>
+            
+              <div class="audience-card">
+                <div class="card-front">
+                  <img src="kinko.png" alt="Famílias">
+                  <p>Famílias</p>
+                </div>
+                <div class="card-back">
+                  <p>Grupos familiares buscando diversão conjunta e opções para todas as idades.</p>
+                </div>
+              </div>
+            
+              <div class="audience-card">
+                <div class="card-front">
+                  <img src="rename.png" alt="Indivíduos conectados">
+                  <p>Indivíduos conectados</p>
+                </div>
+                <div class="card-back">
+                  <p>Pessoas que valorizam a liberdade de assistir conteúdo onde e quando quiserem.</p>
+                </div>
+              </div>
+            </div>            
+    
+            <h3>Diferenciais Competitivos:</h3>
+            <div class="diferenciais-carousel-wrapper">
+                <div class="diferenciais-carousel">
+                    <div class="diferencial-card">
+                        <img src="icon-exclusivo.png" alt="Conteúdo Exclusivo">
+                        <p>Conteúdo exclusivo de produtoras independentes e parcerias internacionais.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <img src="icon-ia.png" alt="Inteligência Artificial">
+                        <p>Recomendações personalizadas com inteligência artificial.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <img src="icon-offline.png" alt="Modo Offline">
+                        <p>Modo offline para assistir sem internet.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <img src="icon-preco.png" alt="Preço Acessível">
+                        <p>Assinatura acessível com planos flexíveis.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <img src="icon-suporte.png" alt="Suporte 24/7">
+                        <p>Atendimento humanizado 24 horas por dia.</p>
+                    </div>
+            
+                    <!-- Duplicados para criar efeito de loop infinito -->
+                    <div class="diferencial-card">
+                        <img src="icon-exclusivo.png" alt="Conteúdo Exclusivo">
+                        <p>Conteúdo exclusivo de produtoras independentes e parcerias internacionais.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <img src="icon-ia.png" alt="Inteligência Artificial">
+                        <p>Recomendações personalizadas com inteligência artificial.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            
+            <div class="venda-timeline">
+                <div class="etapa">
+                  <span>💰</span>
+                  <h4>Preço</h4>
+                  <p>R$ 19,90 (básico) / R$ 29,90 (premium)</p>
+                </div>
+                <div class="etapa">
+                  <span>🚚</span>
+                  <h4>Entrega</h4>
+                  <p>Digital via app, site e smart TVs</p>
+                </div>
+                <div class="etapa">
+                  <span>🛒</span>
+                  <h4>Canais</h4>
+                  <p>Play Store, App Store, operadoras, marketplaces</p>
+                </div>
+              </div>
+              
+    
         <script>
         document.addEventListener('DOMContentLoaded', () => {
             const audienceItems = document.querySelectorAll('.product .audience-item');
-        
+    
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate');
-                        observer.unobserve(entry.target); // Para de observar após a animação ocorrer uma vez
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
-                threshold: 0.15 // Define quando a transição deve começar (10% do elemento visível)
+                threshold: 0.15
             });
-        
+    
             audienceItems.forEach(item => {
                 observer.observe(item);
             });
         });
         </script>
     </section>
-
+    
     <section id="estrategias" class="strategies">
         <div class="container">
-            <h2>Estratégias de Venda e Diferenciais Competitivos</h2>
-            <div class="strategy-item">
-                <h3>Estratégias de Venda:</h3>
-                <ul>
-                    <li>Modelo de Assinatura: Planos mensais e anuais com acesso ilimitado a todo o catálogo.</li>
-                    <li>Marketing Digital: Campanhas online segmentadas para alcançar os diferentes perfis de público.</li>
-                    <li>Parcerias com Produtoras: Acordos para oferecer conteúdo exclusivo e lançamentos antecipados.</li>
-                    <li>Promoções e Testes Gratuitos: Períodos de teste para novos usuários experimentarem a plataforma.</li>
-                    <li>Marketing de Influência: Colaboração com influenciadores digitais para promover o CineStream Prime.</li>
-                </ul>
-            </div>
-            <div class="strategy-item">
-                <h3>Diferenciais Competitivos:</h3>
-                <ul>
-                    <li>Ampla Variedade de Conteúdo: Milhares de filmes e séries de diversos gêneros e épocas.</li>
-                    <li>Conteúdo Exclusivo: Produções originais e parcerias que garantem conteúdo único.</li>
-                    <li>Interface Intuitiva: Navegação fácil e recursos de busca avançados para encontrar o que você procura.</li>
-                    <li>Qualidade de Streaming: Transmissão em alta definição (HD e 4K) com áudio imersivo.</li>
-                    <li>Recomendações Personalizadas: Algoritmos inteligentes que sugerem filmes e séries com base no seu histórico de visualização.</li>
-                    <li>Visualização Offline: Opção de baixar conteúdo para assistir sem internet.</li>
-                </ul>
-            </div>
+            <h2>Estratégias de Venda</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                  <h4>📦 Modelo de Assinatura</h4>
+                  <p>Planos mensais e anuais com acesso ilimitado ao catálogo completo.</p>
+                </div>
+                <div class="strategy-card">
+                  <h4>🎬 Parcerias com Produtoras</h4>
+                  <p>Ofereça conteúdo exclusivo e lançamentos antecipados.</p>
+                </div>
+                <div class="strategy-card">
+                  <h4>🎁 Promoções & Testes</h4>
+                  <p>Testes gratuitos para atrair novos usuários e gerar conversão.</p>
+                </div>
+                <div class="strategy-card">
+                  <h4>🤳 Influenciadores</h4>
+                  <p>Promoção por criadores de conteúdo para alcançar públicos específicos.</p>
+                </div>
+              </div>
+              
         </div>
     </section>
 
     <section id="analise-porter" class="porter-analysis">
         <div class="container">
-            <h2>Análise das 5 Forças de Porter</h2>
-            <div class="porter-grid">
-                <div class="porter-force">
-                    <h3>1. Rivalidade entre Concorrentes Existentes: Média a Alta</h3>
-                    <p>O mercado de educação online e plataformas de streaming de conteúdo é competitivo, com diversos players como Coursera, Udemy, edX e LinkedIn Learning. A diferenciação através da personalização e da qualidade do conteúdo é crucial para o StreamFlow Pro.</p>
-                </div>
-                <div class="porter-force">
-                    <h3>2. Ameaça de Novos Entrantes: Baixa a Média</h3>
-                    <p>A barreira de entrada envolve a criação de uma vasta biblioteca de conteúdo de qualidade e a construção de uma marca confiável. No entanto, plataformas menores e nichadas podem surgir, representando uma ameaça potencial.</p>
-                </div>
-                <div class="porter-force">
-                    <h3>3. Poder de Barganha dos Fornecedores: Baixo a Médio</h3>
-                    <p>Os fornecedores de conteúdo (instrutores, especialistas) podem ter algum poder de barganha, especialmente se forem altamente renomados. No entanto, uma plataforma com muitos usuários oferece um grande alcance, o que pode equilibrar esse poder.</p>
-                </div>
-                <div class="porter-force">
-                    <h3>4. Poder de Barganha dos Compradores: Médio a Alto</h3>
-                    <p>Os profissionais têm muitas opções de plataformas de aprendizado, o que lhes confere um poder de barganha considerável em termos de preço e qualidade do conteúdo. A proposta de valor do StreamFlow Pro precisa ser clara e atraente.</p>
-                </div>
-                <div class="porter-force">
-                    <h3>5. Ameaça de Produtos ou Serviços Substitutos: Média a Alta</h3>
-                    <p>Existem diversas alternativas ao aprendizado online por assinatura, como cursos presenciais, livros, tutoriais gratuitos no YouTube e outras formas de desenvolvimento profissional. O StreamFlow Pro precisa destacar sua conveniência, personalização e custo-benefício.</p>
-                </div>
+          <h2>Análise das 5 Forças de Porter</h2>
+          <div class="porter-cards">
+            <div class="porter-card">
+              <div class="porter-icon">🎬</div>
+              <h3>1. Rivalidade entre Concorrentes</h3>
+              <span class="force-nivel">Alta</span>
+              <p>Plataformas como Netflix, Prime Video e Disney+ disputam mercado com grandes investimentos. A diferenciação por nicho e conteúdo exclusivo é essencial.</p>
             </div>
+            <div class="porter-card">
+              <div class="porter-icon">🚀</div>
+              <h3>2. Ameaça de Novos Entrantes</h3>
+              <span class="force-nivel">Média</span>
+              <p>Apesar dos altos custos, novos serviços de nicho e plataformas regionais continuam emergindo, atraindo públicos específicos.</p>
+            </div>
+            <div class="porter-card">
+              <div class="porter-icon">🎥</div>
+              <h3>3. Poder dos Fornecedores</h3>
+              <span class="force-nivel">Alto</span>
+              <p>Produtoras e estúdios têm grande influência, podendo negociar exclusividades e elevar os custos de licenciamento.</p>
+            </div>
+            <div class="porter-card">
+              <div class="porter-icon">👥</div>
+              <h3>4. Poder dos Consumidores</h3>
+              <span class="force-nivel">Alto</span>
+              <p>Usuários são voláteis e exigentes, com acesso a múltiplas plataformas. Cancelamentos são comuns diante da insatisfação.</p>
+            </div>
+            <div class="porter-card">
+              <div class="porter-icon">📺</div>
+              <h3>5. Ameaça de Substitutos</h3>
+              <span class="force-nivel">Alta</span>
+              <p>Concorrência com YouTube, redes sociais, IPTV, torrents e até cinema tradicional. A experiência do usuário precisa ser impecável.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>      
+      
     
 
     <section id="matriz-bcg" class="bcg-matrix">
@@ -154,25 +245,27 @@
     <section id="matriz-ansoff" class="ansoff-matrix">
         <div class="container">
             <h2>Estratégia de Crescimento pela Matriz Ansoff</h2>
-            <div class="ansoff-strategy">
-                <h3>Penetração de Mercado:</h3>
-                <p>Atrair mais usuários para a plataforma, oferecendo promoções especiais, melhorando a experiência do usuário e investindo em marketing para conquistar uma fatia maior do mercado existente de streaming.</p>
-            </div>
-            <div class="ansoff-strategy">
-                <h3>Desenvolvimento de Produto:</h3>
-                <p>Investir na produção de conteúdo original exclusivo, adicionar funcionalidades como interação social entre usuários e oferecer diferentes planos de assinatura com benefícios variados.</p>
-            </div>
-            <div class="ansoff-strategy">
-                <h3>Desenvolvimento de Mercado:</h3>
-                <p>Expandir para novos mercados geográficos, oferecendo legendas e dublagens em diversos idiomas, e adaptar o conteúdo para diferentes culturas.</p>
-            </div>
-            <div class="ansoff-strategy">
-                <h3>Diversificação:</h3>
-                <p>A longo prazo, considerar a oferta de produtos relacionados, como venda de produtos licenciados de filmes e séries ou a organização de eventos presenciais (ex: exibições especiais).</p>
+            <div class="ansoff-grid">
+                <div class="ansoff-item">
+                    <h3>💥 Penetração de Mercado</h3>
+                    <p>Atrair mais usuários para a plataforma, oferecendo promoções especiais, melhorando a experiência do usuário e investindo em marketing para conquistar uma fatia maior do mercado existente de streaming.</p>
+                </div>
+                <div class="ansoff-item">
+                    <h3>🛠️ Desenvolvimento de Produto</h3>
+                    <p>Investir na produção de conteúdo original exclusivo, adicionar funcionalidades como interação social entre usuários e oferecer diferentes planos de assinatura com benefícios variados.</p>
+                </div>
+                <div class="ansoff-item">
+                    <h3>🌍 Desenvolvimento de Mercado</h3>
+                    <p>Expandir para novos mercados geográficos, oferecendo legendas e dublagens em diversos idiomas, e adaptar o conteúdo para diferentes culturas.</p>
+                </div>
+                <div class="ansoff-item">
+                    <h3>🔀 Diversificação</h3>
+                    <p>A longo prazo, considerar a oferta de produtos relacionados, como venda de produtos licenciados de filmes e séries ou a organização de eventos presenciais (ex: exibições especiais).</p>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <section id="contato" class="contact">
         <div class="container">
             <h2>Entre em Contato</h2>
