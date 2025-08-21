@@ -288,8 +288,8 @@ nav ul li a:hover::after {
 }
 
 .audience-card {
-    width: 250px; /* Aumentado para melhor visual */
-    height: 320px; /* Aumentado para melhor proporção */
+    width: 250px;
+    height: 320px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -308,24 +308,25 @@ nav ul li a:hover::after {
 
 .card-front, .card-back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    overflow: hidden; /* Garante que o conteúdo respeite o border-radius */
+    overflow: hidden;
 }
 
 .card-front {
     background-size: cover;
     background-position: center;
     position: relative;
-    display: flex; /* Usado para alinhar o texto */
-    align-items: flex-end; /* Alinha o texto na parte de baixo */
+    display: flex;
+    align-items: flex-end;
     padding: 20px;
 }
 
-/* Gradiente para garantir a legibilidade do texto */
 .card-front::after {
     content: '';
     position: absolute;
@@ -339,7 +340,7 @@ nav ul li a:hover::after {
 
 .card-front p {
     position: relative;
-    z-index: 2; /* Para ficar acima do gradiente */
+    z-index: 2;
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
