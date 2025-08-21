@@ -73,7 +73,7 @@ nav ul li a:hover {
 
 /* Estilos da Seção Hero */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('New\ Life!\ \(1\).jpg'); /* Adicione sua imagem aqui */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(imagens/New\ Life!\ \(1\).jpg); /* Adicione sua imagem aqui */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -596,3 +596,65 @@ footer {
     margin-bottom: 10px;
   }
   
+/* ========== ESTILOS DA SEÇÃO DE STREAMING (COM ROLAGEM INFINITA NO CONTAINER) ========== */
+
+/* Define a animação de rolagem infinita */
+@keyframes scrollInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Move todo o conteúdo para a esquerda */
+    }
+}
+
+.streaming {
+    padding: 2em 0;
+}
+
+.category-row {
+margin-bottom: 2.5rem;
+}
+
+.category-row h2 {
+color: #e5e5e5;
+font-size: 1.6rem;
+margin-bottom: 1rem;
+}
+
+.movies-carousel {
+display: flex;
+gap: 15px;
+.movies-carousel {
+    display: flex;
+    gap: 15px;
+    overflow: hidden; /* Mantém o conteúdo dentro do container */
+    white-space: nowrap; /* Impede que os pôsteres quebrem para a próxima linha */
+
+    /* Aplica a animação de rolagem infinita */
+    animation: scrollInfinito 30s linear infinite;
+    /* scrollInfinito: nome da animação */
+    /* 30s: duração (ajuste conforme a velocidade desejada) */
+    /* linear: velocidade constante */
+    /* infinite: repete a animação continuamente */
+}
+
+/* Pausa a animação ao passar o mouse */
+.movies-carousel:hover {
+    animation-play-state: paused;
+}
+}
+
+.movie-poster img {
+width: 200px;
+height: 300px;
+object-fit: cover;
+border-radius: 8px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+
+.movie-poster:hover img {
+transform: scale(1.05);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
