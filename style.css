@@ -220,7 +220,7 @@ nav ul li a:hover::after {
 .movies-carousel {
     display: flex;
     gap: 15px;
-    animation: scroll-loop 40s linear infinite;
+    animation: scroll-loop 20s linear infinite;
 }
 
 .movies-carousel.reverse-scroll {
